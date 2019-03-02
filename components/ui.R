@@ -24,7 +24,13 @@ ui <- shinyUI(
       title = "Stock Explorer",
       ui_explorer("ui_explorer"),
       value = "explorer"
-    )   
+    ),
+   
+   tabPanel(
+     "Configure",
+     value = "config",
+     icon = icon("cog")
+   )
     
   )
 )

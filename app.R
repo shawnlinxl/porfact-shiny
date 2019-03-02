@@ -3,11 +3,15 @@
 
 
 # Source components -------------------------------------------------------
+library(magrittr)
 library(shiny)
 source("components/data_loader.R")
+source("components/module_configure.R")
+source("components/module_analytics.R")
 source("components/module_analytics.R")
 source("components/module_explorer.R")
 source("components/ui.R")
 source("components/server.R")
+
 
 shinyApp(ui, server)

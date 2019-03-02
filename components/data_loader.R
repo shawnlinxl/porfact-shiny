@@ -13,4 +13,12 @@ prices <-
 
 holdings <-
   read_csv(file = "data/holdings.csv",
-           col_types = cols(tradeday = col_date(format = "%Y-%m-%d")))
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+
+nav <-
+  read_csv(file = "data/nav.csv",
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+
+attr <-
+  read_csv(file = "data/attr.csv",
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
