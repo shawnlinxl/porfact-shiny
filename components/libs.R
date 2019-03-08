@@ -4,3 +4,4 @@
 library(shiny)
 library(readr)
 library(magrittr)
+library(PerformanceAnalytics)

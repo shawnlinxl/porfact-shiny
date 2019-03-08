@@ -7,7 +7,7 @@ server <- shinyServer(function(input, output, session) {
   callModule(server_analytics, "ui_analytics", holdings = data$holdings)
   callModule(server_explorer, "ui_explorer")
   callModule(server_config, "ui_config", data$nav)
-  callModule(server_overview, "ui_overview", attr = data$attr)
+  callModule(server_overview, "ui_overview", attr_use = data$attr)
   
   # config modal dialogue ---------------------------------------------------
   observeEvent(input$navbar, {

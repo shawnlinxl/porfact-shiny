@@ -24,7 +24,6 @@ ui <- shinyUI(
     
    tabPanel(
       title = "Stock Explorer",
-      shiny::includeCSS("styles.css"),
       ui_explorer("ui_explorer"),
       value = "explorer"
     ),

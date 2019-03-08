@@ -15,7 +15,9 @@ hc_plot_ohlc <- function(ticker_use, start_date) {
     highcharter::highchart(type = "stock") %>%
     highcharter::hc_add_series(data_plot, name = ticker_use) %>%
     highcharter::hc_title(text = ticker_use) %>%
-    highcharter::hc_rangeSelector(selected = "4")
+    highcharter::hc_rangeSelector(selected = "4") %>%
+    highcharter::hc_scrollbar(enabled = FALSE) %>%
+    highcharter::hc_navigator(enabled = FALSE)
   
   return(hc_plot)
 }
