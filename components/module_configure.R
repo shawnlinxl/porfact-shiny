@@ -53,12 +53,7 @@ server_config <- function(input, output, session, nav) {
 
 # Data --------------------------------------------------------------------
 data_config <- function(input, output, session) {
-  holdings_out <- reactive({
-    holdings %>%
-      dplyr::filter(account %in% input$account)
-    
-  })
-  
+
   
   nav_out <- reactive({
     nav %>%
@@ -73,10 +68,22 @@ data_config <- function(input, output, session) {
     input$daterange[2]
   })
   
+  holdings_out <- reactive({
+    holdings %>%
+      dplyr::filter(account %in% input$account, tradeday >= start_date(), tradeday <= end_date())
+    
+  })
+  
+  attr_out <- reactive({
+    attr %>%
+      dplyr::filter(account %in% input$account, tradeday >= start_date(), tradeday <= end_date())
+  })
+  
   return(
     list(
       holdings = holdings_out,
       nav = nav_out,
+      attr = attr_out,
       start_date = start_date,
       end_date = end_date
     )

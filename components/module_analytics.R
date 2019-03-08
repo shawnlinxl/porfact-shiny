@@ -14,10 +14,10 @@ ui_analytics <- function(id) {
 
 
 # Server ------------------------------------------------------------------
-server_analytics <- function(input, output, session, holdings, end_date) {
+server_analytics <- function(input, output, session, holdings) {
   holdings_table <- reactive({
     holdings() %>%
-      dplyr::filter(tradeday == end_date()) %>%
+      dplyr::filter(tradeday == max(holdings()$tradeday)) %>%
       dplyr::select(-tradeday, -account) %>%
       dplyr::group_by(ticker) %>%
       dplyr::summarize(quantity = sum(quantity, na.rm = TRUE)) %>%

@@ -3,5 +3,4 @@
 
 library(shiny)
 library(readr)
-library(highcharter)
-library(PerformanceAnalytics)
+library(magrittr)
