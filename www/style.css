@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link  {
+  color: #fff;
+    background-color: #4298b5;
+}
+
+.nav-pills .nav-link {
+  color:#4298b5;
+}
+
+.nav-pills:hover .nav-link:hover {
+  color: #aaa;
+}
+
+.navbar-vertical.navbar-expand-md .navbar-brand-img {
+  max-height: 5rem;
+}
+
+.navbar-vertical.navbar-expand-md .navbar-brand{
+  padding-bottom: 0rem;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.text-primary {
+    color: #4298b5 !important;
+    font-size: 1.3em !important;
+}
+
+.icon-shape-primary {
+    background-color: white !important;
+}
+
+.nav {
+    display: flex;
+    margin-bottom: 1px !important;
+    padding-left: 2px !important;
+    list-style: none;
+    flex-wrap: wrap;
+    color: #4298b5 !important;
+}
+
+.nav>li>a:hover {
+    text-decoration: none;
+    color: #aaa !important;
+}
+
+.nav>li>a {
+    text-decoration: none;
+    color: #4298b5 !important;
+    padding-left: 5px !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a.show {
+  font-weight: bold;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 0px solid #111 !important;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    border-bottom: 0px solid #111 !important; 
+}
+
+.bg-info {
+    background-color: #4298b5 !important;
+}

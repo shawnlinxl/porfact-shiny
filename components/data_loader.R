@@ -22,3 +22,7 @@ nav <-
 attr <-
   read_csv(file = "data/attr.csv",
            col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+
+account_use <- unique(nav$account)
+start_date <- min(nav$tradeday)
+end_date <- max(nav$tradeday)
