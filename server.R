@@ -142,7 +142,7 @@ server <- shinyServer(function(input, output) {
   ohlc_plot <- reactive({
     result <- list()
     for (ticker_use in input$ticker) {
-      result <- rlist::list.append(result, hc_plot_mem(ticker_use=ticker_use, start_date = input$start_date))
+      result <- rlist::list.append(result, hc_plot_ohlc_mem(ticker_use=ticker_use, start_date = input$start_date))
     }
     
     highcharter::hw_grid(result, ncol = 3)

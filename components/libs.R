@@ -32,7 +32,7 @@ hc_plot_ohlc <- function(ticker_use, start_date) {
 }
 
 # use memoise to speedup repeated run
-hc_plot_mem <- memoise::memoise(hc_plot_ohlc)
+hc_plot_ohlc_mem <- memoise::memoise(hc_plot_ohlc)
 
 hc_plot_returns <- function(cum_returns) {
   hc_plot <-

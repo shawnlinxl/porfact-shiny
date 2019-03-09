@@ -3,4 +3,4 @@ packrat/lib*/
 .Rhistory
 .Rprofile
 .RData
-rsconnect/*
+rsconnect
