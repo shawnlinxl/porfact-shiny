@@ -168,7 +168,10 @@ server <- shinyServer(function(input, output) {
       result <-
         highcharter::highchart() %>%
         highcharter::hc_chart(type = "pie") %>%
-        highcharter::hc_add_series_labels_values(labels = holdings_table$ticker, values = holdings_table$value * 100)
+        highcharter::hc_add_series_labels_values(labels = holdings_table$ticker, values = round(holdings_table$value * 100, 1)) %>%
+        highcharter::hc_tooltip(formatter = htmlwidgets::JS("function () {
+            return '<b>' + this.point.name + '</b>:' + this.y + '%';
+        }"))
       
       
       tabPanel(

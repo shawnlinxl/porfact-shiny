@@ -57,7 +57,9 @@ hc_plot_returns <- function(cum_returns) {
     hc_plot %>%
     highcharter::hc_legend(enabled = TRUE) %>%
     highcharter::hc_scrollbar(enabled = FALSE) %>%
-    highcharter::hc_yAxis(labels = list(format = '{value}%'))
+    highcharter::hc_yAxis(labels = list(format = '{value}%')) %>%
+    highcharter::hc_tooltip(pointFormat = '<span style="color:{series.color}">{series.name}</span>: <b>VAMI: {point.y}</b> (Period Return: {point.change}%)<br/>',
+                            valueDecimals = 0)
   
   return(hc_plot)
 }
