@@ -72,3 +72,8 @@ table.dataTable thead th, table.dataTable thead td {
 .bg-info {
     background-color: #4298b5 !important;
 }
+
+.card-body {
+    padding: 0rem 1.5rem;
+    flex: 1 1 auto;
+}
