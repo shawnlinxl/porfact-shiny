@@ -4,28 +4,8 @@
 
 library(magrittr)
 
-server <- shinyServer(function(input, output, session) {
+server <- shinyServer(function(input, output) {
   current_tab  <- "overview"
-  
-  observeEvent(input$daterange, {
-    start_date <<- input$daterange[1]
-    end_date <<- input$daterange[2]
-  })
-  
-  observe({
-    min_date <-
-      min(dplyr::filter(nav, account == input$account)$tradeday)
-    max_date <-
-      max(dplyr::filter(nav, account == input$account)$tradeday)
-    updateDateRangeInput(
-      session,
-      "daterange",
-      start = min_date,
-      end = max_date,
-      min = min_date,
-      max = max_date
-    )
-  })
   
   observeEvent(input$account, {
     account_use <<- input$account

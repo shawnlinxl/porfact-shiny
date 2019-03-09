@@ -30,15 +30,6 @@ ui <- argonDash::argonDashPage(
         'About'
       ),
       
-      dateRangeInput(
-        inputId = "daterange",
-        label = "Date Range",
-        min = start_date,
-        max = end_date,
-        start = start_date,
-        end = end_date
-      ),
-      
       selectizeInput(
         inputId = "account",
         label = "Account",
