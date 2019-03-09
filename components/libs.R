@@ -6,6 +6,10 @@ library(readr)
 library(PerformanceAnalytics)
 library(argonDash)
 library(argonR)
+library(dplyr)
+library(xts)
+library(highcharter)
+library(DT)
 
 # Utility function --------------------------------------------------------
 hc_plot_ohlc <- function(ticker_use, start_date) {

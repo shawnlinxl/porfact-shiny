@@ -1,6 +1,10 @@
 # Thu Feb 28 01:10:53 2019 ------------------------------
 # UI interface for the shiny app
 
+# Source components -------------------------------------------------------
+source("components/libs.R")
+source("components/data_loader.R")
+
 
 ui <- argonDash::argonDashPage(
   title = "Porfact",
@@ -29,6 +33,8 @@ ui <- argonDash::argonDashPage(
         icon_color = '#4298b5',
         'About'
       ),
+      
+      br(),
       
       selectizeInput(
         inputId = "account",
