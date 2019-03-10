@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link  {
-  color: #fff;
+    color: #fff;
     background-color: #4298b5;
 }
 
@@ -10,8 +10,15 @@
 }
 
 .nav-pills:hover .nav-link:hover {
-  color: #aaa;
+  color: #4298b5;
+  font-weight: bold;
 }
+
+.nav-pills .nav-link.active:hover, .nav-pills .show>.nav-link:hover  {
+    color: #fff;
+    background-color: #4298b5;
+}
+
 
 .navbar-vertical.navbar-expand-md .navbar-brand-img {
   max-height: 5rem;
@@ -35,31 +42,7 @@ body {
     background-color: white !important;
 }
 
-.nav {
-    display: flex;
-    margin-bottom: 1px !important;
-    padding-left: 2px !important;
-    list-style: none;
-    flex-wrap: wrap;
-    color: #4298b5 !important;
-}
 
-.nav>li>a:hover {
-    text-decoration: none;
-    color: #aaa !important;
-}
-
-.nav>li>a {
-    text-decoration: none;
-    color: #4298b5 !important;
-    padding-left: 5px !important;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
-}
-
-a.show {
-  font-weight: bold;
-}
 
 table.dataTable.no-footer {
     border-bottom: 0px solid #111 !important;

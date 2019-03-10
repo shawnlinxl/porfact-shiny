@@ -54,7 +54,7 @@ server <- shinyServer(function(input, output) {
   
   
   output$performance_summary <- renderUI({
-    do.call(tabsetPanel, c(id = 't', lapply(unique(returns()$account), function(account_use) {
+    do.call(argonR::argonTabSet, c(id = 'perfsum', width = 12, lapply(unique(returns()$account), function(account_use) {
       returns_use <-
         dplyr::filter(returns(), account == account_use) %>%
         dplyr::select(tradeday, returns) %>%
@@ -94,8 +94,10 @@ server <- shinyServer(function(input, output) {
         as.character(scales::percent(PerformanceAnalytics::maxDrawdown(returns_use)[1]))
       rownames(result)[5] <- "Maximum Drawdown"
       
-      tabPanel(
-        title = account_use,
+      argonR::argonTab(
+        tabName = account_use,
+        id = paste0(account_use, "_perfsum"),
+        active = (account_use == input$account[1]),
         DT::datatable(
           data = result,
           style = "default",
@@ -110,7 +112,7 @@ server <- shinyServer(function(input, output) {
   })
   
   output$calendar_returns <- renderUI({
-    do.call(tabsetPanel, c(id = 't', lapply(unique(returns()$account), function(account_use) {
+    do.call(argonR::argonTabSet, c(id = 'calret', width = 12, lapply(unique(returns()$account), function(account_use) {
       returns_use <-
         dplyr::filter(returns(), account == account_use) %>%
         dplyr::select(tradeday, returns) %>%
@@ -123,8 +125,10 @@ server <- shinyServer(function(input, output) {
           prod(1 + x) - 1
         })
       
-      tabPanel(
-        title = account_use,
+      argonR::argonTab(
+        tabName = account_use,
+        id = paste0(account_use, "_calret"),
+        active = (account_use == input$account[1]),
         PerformanceAnalytics::table.CalendarReturns(returns_use, digits = 2) %>%
           DT::datatable(
             data = .,
@@ -152,7 +156,7 @@ server <- shinyServer(function(input, output) {
   
   
   output$allocation <- renderUI({
-    do.call(tabsetPanel, c(id = 't', lapply(input$account, function(account_use) {
+    do.call(argonR::argonTabSet, c(id = "allocation", width = 12, lapply(input$account, function(account_use) {
       holdings_table <-
         dplyr::filter(holdings, account == account_use)  %>%
         dplyr::filter(tradeday == max(tradeday))  %>%
@@ -174,8 +178,10 @@ server <- shinyServer(function(input, output) {
         }"))
       
       
-      tabPanel(
-        title = account_use,
+      argonR::argonTab(
+        tabName = account_use,
+        id  = paste0(account_use, "_allocation"),
+        active = (account_use == input$account[1]),
         result
       )
     })))
