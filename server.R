@@ -96,7 +96,6 @@ server <- shinyServer(function(input, output) {
       
       argonR::argonTab(
         tabName = account_use,
-        id = paste0(account_use, "_perfsum"),
         active = (account_use == input$account[1]),
         DT::datatable(
           data = result,
@@ -127,7 +126,6 @@ server <- shinyServer(function(input, output) {
       
       argonR::argonTab(
         tabName = account_use,
-        id = paste0(account_use, "_calret"),
         active = (account_use == input$account[1]),
         PerformanceAnalytics::table.CalendarReturns(returns_use, digits = 2) %>%
           DT::datatable(
@@ -180,7 +178,6 @@ server <- shinyServer(function(input, output) {
       
       argonR::argonTab(
         tabName = account_use,
-        id  = paste0(account_use, "_allocation"),
         active = (account_use == input$account[1]),
         result
       )
