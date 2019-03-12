@@ -144,7 +144,7 @@ ui <- argonDash::argonDashPage(
             tags$li("PerformanceAnalytics: I didn't write any of the financial metrics calculation myself. PerformanceAnalytics covers many metrics that are more than sufficient for this Shiny app."),
             tags$li("Argon: Beautiful and ready to use bootstrap 4 theme. I see this as a replacement for shiny builtin ui/shinydashboard which are a little bit dated"),
             tags$li("memoise: When running functions with repeated parameters, memoise allows you to cache and therefore speed up the calculation."),
-            tags$li("tidyverse: Do I need to mention this? Simply the best data manipulation colleccion.")
+            tags$li("tidyverse: Do I need to mention this? Simply the best data manipulation collection.")
           ))
           
         )
