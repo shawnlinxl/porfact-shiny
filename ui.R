@@ -136,15 +136,15 @@ ui <- argonDash::argonDashPage(
           url = 'http://xiaolianglin.com',
           src = 'user.jpg',
           style = "text-align:left",
-          p("This project uses Shiny to monitor my personal stock portfolio. When I built this project, I wanted to demonstrate the power of R shiny, while not making it over complicated. Therefore, I chose to fix some dataset and limit the amount of customization. The full version should retrieve data from database and various online apis."),
+          p("This project uses Shiny to monitor my personal stock portfolio. When I built this project, I wanted to demonstrate the power of R shiny, while not making it overly complicated. Therefore, I chose to fix some dataset and limit the amount of parameters that users can tune. The full version should retrieve data from databases and various online apis, there enabling more options."),
           br(),
           p("Libraries used:"),
           div(tags$ul(
             tags$li("Highcharter: For static analysis, I love to use ggplot2. However, for financial time series, I find highchart to be both professional and easy to use. It adds a lot of interactivity to the plot and allows you the analyze your data in a flexible way."),
             tags$li("PerformanceAnalytics: I didn't write any of the financial metrics calculation myself. PerformanceAnalytics covers many metrics that are more than sufficient for this Shiny app."),
-            tags$li("Argon: Beautiful and ready to use bootstrap 4 theme. I see this as a replacement for shiny builtin ui/shinydashboard which are a little bit dated"),
-            tags$li("memoise: When running functions with repeated parameters, memoise allows you to cache and therefore speed up the calculation."),
-            tags$li("tidyverse: Do I need to mention this? Simply the best data manipulation collection.")
+            tags$li("Argon: Beautiful and ready to use bootstrap 4 theme. I see this as a replacement for shiny builtin ui/shinydashboard which are a little bit dated. Shout out to David Granjon for creating this amazing package and being a very responsive maintainer."),
+            tags$li("memoise: When running functions with repeated parameters, memoise allows you to cache results and therefore speed up calculations."),
+            tags$li("tidyverse: Do I even need to mention this? Hands down to the best data manipulation package of all programming languages. This is why I use R.")
           ))
           
         )
