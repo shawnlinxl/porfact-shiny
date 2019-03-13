@@ -136,7 +136,7 @@ ui <- argonDash::argonDashPage(
           url = 'http://xiaolianglin.com',
           src = 'user.jpg',
           style = "text-align:left",
-          p("This project uses Shiny to monitor my personal stock portfolio. When I built this project, I wanted to demonstrate the power of R shiny, while not making it overly complicated. Therefore, I chose to fix some dataset and limit the amount of parameters that users can tune. The full version should retrieve data from databases and various online apis, there enabling more options."),
+          p("This project uses Shiny to monitor my personal stock portfolio. When I built this project, I wanted to demonstrate the power of R shiny, while not making it overly complicated. Therefore, I chose to fix some dataset and limit the amount of parameters that users can tune. The full version should retrieve data from databases and various online apis, therefore enabling more options."),
           br(),
           p("Libraries used:"),
           div(tags$ul(
