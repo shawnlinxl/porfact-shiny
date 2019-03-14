@@ -70,6 +70,15 @@ ui <- argonDash::argonDashPage(
         
         argonR::argonRow(
           argonR::argonCard(
+            title = "Calendar Returns",
+            icon = "calendar-grid-58",
+            width = 12,
+            uiOutput("calendar_returns")
+          )
+        ),
+        
+        argonR::argonRow(
+          argonR::argonCard(
             width = 6,
             title = "Summary",
             icon = "collection",
@@ -80,16 +89,6 @@ ui <- argonDash::argonDashPage(
             title = "Allocation",
             icon = "chart-pie-35",
             uiOutput("allocation")
-          )
-        ),
-        
-        
-        argonR::argonRow(
-          argonR::argonCard(
-            title = "Calendar Returns",
-            icon = "calendar-grid-58",
-            width = 12,
-            uiOutput("calendar_returns")
           )
         ),
         

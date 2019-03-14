@@ -100,10 +100,10 @@ server <- shinyServer(function(input, output) {
         DT::datatable(
           data = result,
           style = "default",
-          options = list(dom = 't', ordering = FALSE),
-          width = "200px",
-          height = "200px",
+          options = list(dom = 't', ordering = FALSE, scrollX = TRUE),
           colnames = c(""),
+          width = "100%",
+          height = "100%",
           class = "nowrap compact"
         )
       )
@@ -131,9 +131,9 @@ server <- shinyServer(function(input, output) {
           DT::datatable(
             data = .,
             style = "default",
-            options = list(dom = 't', ordering = FALSE),
-            width = "800px",
-            height = "150px",
+            options = list(dom = 't', ordering = FALSE, scrollX = TRUE),
+            width = "100%",
+            height = "100%",
             class = "nowrap compact"
           ) %>%
           DT::formatRound(columns = c(1:13), digits = 2)

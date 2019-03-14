@@ -52,6 +52,10 @@ table.dataTable thead th, table.dataTable thead td {
     border-bottom: 0px solid #111 !important; 
 }
 
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 0px solid #111 !important;
+}
+
 .bg-info {
     background-color: #4298b5 !important;
 }
