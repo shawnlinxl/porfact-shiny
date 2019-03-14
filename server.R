@@ -72,6 +72,17 @@ server <- shinyServer(function(input, output) {
           prod(1 + x) - 1
         })
       
+      returns_bm_use <-
+        dplyr::filter(index_returns(), account == "S&P 500") %>%
+        dplyr::select(tradeday, returns) %>%
+        data.frame(stringsAsFactors = FALSE)
+      returns_bm_use <-
+        xts::xts(returns_bm_use[, -1], order.by = returns_bm_use[, 1])
+      returns_bm_use <-
+        xts::apply.monthly(returns_bm_use, function(x) {
+          prod(1 + x) - 1
+        })
+      
       result[2, 1] <-
         as.character(scales::percent(
           PerformanceAnalytics::Return.annualized(returns_use)[1]
@@ -93,6 +104,12 @@ server <- shinyServer(function(input, output) {
       result[5, 1] <-
         as.character(scales::percent(PerformanceAnalytics::maxDrawdown(returns_use)[1]))
       rownames(result)[5] <- "Maximum Drawdown"
+      result[6, 1] <-
+        as.character(round(PerformanceAnalytics::CAPM.beta(returns_use, returns_bm_use),2))
+      rownames(result)[6] <- "Beta: S&P 500"
+      result[7, 1] <-
+        as.character(scales::percent((1+PerformanceAnalytics::CAPM.alpha(returns_use, returns_bm_use))^12 -1))
+      rownames(result)[7] <- "Alpha: S&P 500"
       
       argonR::argonTab(
         tabName = account_use,
