@@ -173,10 +173,11 @@ server <- shinyServer(function(input, output) {
   output$allocation <- renderUI({
     do.call(argonR::argonTabSet, c(id = "allocation", width = 12, lapply(input$account, function(account_use) {
       holdings_table <-
-        dplyr::filter(holdings, account == account_use)  %>%
-        dplyr::filter(tradeday == max(tradeday))  %>%
+        dplyr::filter(holdings, account %in% account_use)  %>%
         dplyr::left_join(prices, by = c("tradeday", "ticker")) %>%
         dplyr::left_join(nav, by = c("tradeday", "account")) %>%
+        .[complete.cases(.),] %>%
+        dplyr::filter(tradeday == max(tradeday))  %>%
         dplyr::select(-tradeday, -account) %>%
         dplyr::group_by(ticker) %>%
         dplyr::summarize(value = sum(quantity * close/nav, na.rm = TRUE)) %>%

@@ -5,22 +5,23 @@
 # Load Library ------------------------------------------------------------
 library(readr)
 
+github <-"https://raw.githubusercontent.com/shawnlinxl/data-warehouse/master/csv/"
 
 # Load data ---------------------------------------------------------------
 prices <-
-  read_csv(file = "data/prices.csv",
-           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+  read_csv(paste0(github, "prices.csv"),
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d")))
 
 holdings <-
-  read_csv(file = "data/holdings.csv",
-           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+  read_csv(paste0(github, "holdings.csv"),
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d")))
 
 nav <-
-  read_csv(file = "data/nav.csv",
-           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+  read_csv(paste0(github, "nav.csv"),
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d")))
 
 attr <-
-  read_csv(file = "data/attr.csv",
-           col_types = cols(tradeday = col_date(format = "%Y-%m-%d %H:%M:%S")))
+  read_csv(paste0(github, "attr.csv"),
+           col_types = cols(tradeday = col_date(format = "%Y-%m-%d")))
 
 account_use <- unique(nav$account)
